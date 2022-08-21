@@ -1,7 +1,5 @@
 package com.bakh.springsecurity312.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 
@@ -11,7 +9,9 @@ import java.util.Set;
 /**
  * @author Bakhmai Begaev
  */
+
 @Entity
+@RequiredArgsConstructor
 @Table(name = "role_table")
 public class Role implements GrantedAuthority {
 
@@ -25,13 +25,6 @@ public class Role implements GrantedAuthority {
 
     @ManyToMany(mappedBy = "roles")
     private Set<User> users;
-
-    public Role() {
-    }
-
-    public Role(Long id, String name) {
-        this.name = name;
-    }
 
     public Long getId() {
         return id;
