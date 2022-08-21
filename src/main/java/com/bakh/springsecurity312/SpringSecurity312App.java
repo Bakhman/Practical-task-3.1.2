@@ -29,17 +29,17 @@ public class SpringSecurity312App implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Set<Role> roles = new HashSet<>();
-		Role role = new Role(1L,"ROLE_ADMIN");
-		Role role2 = new Role(2L, "ROLE_USER");
+// 		Set<Role> roles = new HashSet<>();
+// 		Role role = new Role(1L,"ROLE_ADMIN");
+// 		Role role2 = new Role(2L, "ROLE_USER");
 
-		roles.add(role);
-		roles.add(role2);
-		User user = new User("bakhman", "$2a$12$G9UlD404vh7Jxx.SFgvD0OtiCU6k06rYOODt2CX3WCllA6DcIA20y", "bakhmai","admin", roles);
-		if(userRepository.findAll().isEmpty()) {
-			roleRepository.save(role);
-			roleRepository.save(role2);
-			userRepository.save(user);
-		}
+// 		roles.add(role);
+// 		roles.add(role2);
+// 		User user = new User("bakhman", "$2a$12$G9UlD404vh7Jxx.SFgvD0OtiCU6k06rYOODt2CX3WCllA6DcIA20y", "bakhmai","admin", roles);
+// 		if(userRepository.findAll().isEmpty()) {
+// 			roleRepository.save(role);
+// 			roleRepository.save(role2);
+// 			userRepository.save(user);
+// 		}
 	}
 }
