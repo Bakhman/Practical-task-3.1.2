@@ -1,9 +1,10 @@
-package com.bakh.springsecurity312.service;
+package com.bakh.springsecurity312.services;
 
-import com.bakh.springsecurity312.model.User;
-import com.bakh.springsecurity312.repository.RoleRepository;
-import com.bakh.springsecurity312.repository.UserRepository;
+import com.bakh.springsecurity312.models.User;
+import com.bakh.springsecurity312.repositories.RoleRepository;
+import com.bakh.springsecurity312.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -18,27 +19,16 @@ import java.util.Optional;
  * @author Bakhmai Begaev
  */
 @Service
-public class UserServiceImpl implements  UserDetailsService, UserService {
+public class UserServiceImpl implements UserService {
     
     private final UserRepository userRepository;
-    private final RoleRepository roleRepository;
 
     private final BCryptPasswordEncoder passwordEncoder;
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository, RoleRepository roleRepository, BCryptPasswordEncoder passwordEncoder) {
+    public UserServiceImpl(UserRepository userRepository,  BCryptPasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
-        this.roleRepository = roleRepository;
         this.passwordEncoder = passwordEncoder;
-    }
-
-    @Override
-    public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
-        User user = userRepository.findByEmail(name);
-        if (user == null) {
-            throw new UsernameNotFoundException("User not found!");
-        }
-        return user;
     }
 
     @Override
@@ -79,11 +69,6 @@ public class UserServiceImpl implements  UserDetailsService, UserService {
     public User editUser(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userRepository.saveAndFlush(user);
-    }
-
-    @Override
-    public User findByUsername(String name) {
-        return userRepository.findByUsername(name);
     }
 
 }
