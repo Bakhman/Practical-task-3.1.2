@@ -1,4 +1,4 @@
-package com.bakh.springsecurity312.models;
+package com.bakh.springsecurity312.model;
 
 import org.springframework.security.core.GrantedAuthority;
 
