@@ -1,7 +1,6 @@
 package com.bakh.springsecurity312.controller;
 
 import com.bakh.springsecurity312.model.User;
-import com.bakh.springsecurity312.service.UserDetailsServiceImpl;
 import com.bakh.springsecurity312.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -19,7 +18,7 @@ public class UserController {
     private final UserServiceImpl userService;
 
     @Autowired
-    public UserController(UserServiceImpl userService, UserDetailsServiceImpl userDetailsServiceImpl) {
+    public UserController(UserServiceImpl userService) {
         this.userService = userService;
     }
 
