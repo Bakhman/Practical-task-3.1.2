@@ -1,7 +1,7 @@
-package com.bakh.springsecurity312.configs;
+package com.bakh.springsecurity312.config;
 
 
-import com.bakh.springsecurity312.services.UserServiceImpl;
+import com.bakh.springsecurity312.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -15,10 +15,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private final SuccessUserHandler successUserHandler;
-    private UserDetailsServiceImpl userService;
+    private UserServiceImpl userService;
 
     @Autowired
-    public WebSecurityConfig(SuccessUserHandler successUserHandler, @LAZY UserDetailsServiceImpl userService) {
+    public WebSecurityConfig(SuccessUserHandler successUserHandler, @Lazy UserDetailsServiceImpl userService) {
         this.successUserHandler = successUserHandler;
         this.userService = userService;
     }
