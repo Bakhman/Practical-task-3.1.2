@@ -19,7 +19,7 @@ import java.util.Optional;
  * @author Bakhmai Begaev
  */
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserDetailsService, UserService {
     
     private final UserRepository userRepository;
 
@@ -29,6 +29,15 @@ public class UserServiceImpl implements UserService {
     public UserServiceImpl(UserRepository userRepository,  BCryptPasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
+    }
+    
+    @Override
+    public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
+        User user = userRepository.findByEmail(name);
+        if (user == null) {
+            throw new UsernameNotFoundException("User not found!");
+        }
+        return user;
     }
 
     @Override
