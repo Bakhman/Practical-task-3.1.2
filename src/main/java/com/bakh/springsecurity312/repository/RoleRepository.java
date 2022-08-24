@@ -1,6 +1,6 @@
-package com.bakh.springsecurity312.repositories;
+package com.bakh.springsecurity312.repository;
 
-import com.bakh.springsecurity312.models.Role;
+import com.bakh.springsecurity312.model.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
