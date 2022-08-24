@@ -1,4 +1,4 @@
-package com.bakh.springsecurity312.configs;
+package com.bakh.springsecurity312.config;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.AuthorityUtils;
