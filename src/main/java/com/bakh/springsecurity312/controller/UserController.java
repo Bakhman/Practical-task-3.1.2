@@ -1,8 +1,8 @@
-package com.bakh.springsecurity312.controllers;
+package com.bakh.springsecurity312.controller;
 
-import com.bakh.springsecurity312.models.User;
-import com.bakh.springsecurity312.services.UserDetailsServiceImpl;
-import com.bakh.springsecurity312.services.UserServiceImpl;
+import com.bakh.springsecurity312.model.User;
+import com.bakh.springsecurity312.service.UserDetailsServiceImpl;
+import com.bakh.springsecurity312.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
