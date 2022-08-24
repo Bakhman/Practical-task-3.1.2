@@ -12,7 +12,6 @@ import javax.transaction.Transactional;
  * @author Bakhmai Begaev
  */
 @Repository
-@Transactional
 public interface UserRepository extends JpaRepository<User, Long> {
     User findByEmail(String email);
 }
