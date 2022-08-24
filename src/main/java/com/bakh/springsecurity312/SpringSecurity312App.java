@@ -1,9 +1,9 @@
 package com.bakh.springsecurity312;
 
-import com.bakh.springsecurity312.models.Role;
-import com.bakh.springsecurity312.models.User;
-import com.bakh.springsecurity312.repositories.RoleRepository;
-import com.bakh.springsecurity312.repositories.UserRepository;
+import com.bakh.springsecurity312.model.Role;
+import com.bakh.springsecurity312.model.User;
+import com.bakh.springsecurity312.repository.RoleRepository;
+import com.bakh.springsecurity312.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
