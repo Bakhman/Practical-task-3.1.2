@@ -1,7 +1,7 @@
 package com.bakh.springsecurity312.configs;
 
 
-import com.bakh.springsecurity312.services.UserDetailsServiceImpl;
+import com.bakh.springsecurity312.services.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
