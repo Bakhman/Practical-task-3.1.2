@@ -36,7 +36,7 @@ public class SpringSecurity312App implements CommandLineRunner {
 
 		roles.add(role1);
 		roles.add(role2);
-		roles.add(role2)
+		roles1.add(role2);
 		User admin = new User("bakhman", "$2a$12$G9UlD404vh7Jxx.SFgvD0OtiCU6k06rYOODt2CX3WCllA6DcIA20y", "Bakhmai","admin", roles);
 		User user = new User("John", "$2a$12$SXxF.BgRpKyaLgWEoP8Qe.GPaaAzVT21DsdhvXAhq3u5OQV7dJjre", "Doe","user", roles1);
 		if (userRepository.findAll().isEmpty()) {
