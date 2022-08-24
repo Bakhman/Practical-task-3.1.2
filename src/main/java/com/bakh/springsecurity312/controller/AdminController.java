@@ -1,9 +1,9 @@
-package com.bakh.springsecurity312.controllers;
+package com.bakh.springsecurity312.controller;
 
-import com.bakh.springsecurity312.models.Role;
-import com.bakh.springsecurity312.models.User;
-import com.bakh.springsecurity312.services.RoleServiceImpl;
-import com.bakh.springsecurity312.services.UserServiceImpl;
+import com.bakh.springsecurity312.model.Role;
+import com.bakh.springsecurity312.model.User;
+import com.bakh.springsecurity312.service.RoleServiceImpl;
+import com.bakh.springsecurity312.service.UserServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
