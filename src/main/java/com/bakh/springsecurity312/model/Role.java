@@ -12,7 +12,6 @@ import java.util.Set;
 @Entity
 @Table(name = "role_table")
 public class Role implements GrantedAuthority {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
@@ -60,14 +59,12 @@ public class Role implements GrantedAuthority {
         return getName();
     }
 
-    @Override
+   @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Role role)) return false;
 
-        if (getId() != null ? !getId().equals(role.getId()) : role.getId() != null) return false;
-        if (getName() != null ? !getName().equals(role.getName()) : role.getName() != null) return false;
-        return getUsers() != null ? getUsers().equals(role.getUsers()) : role.getUsers() == null;
+        return getId() != null ? getId().equals(role.getId()) : role.getId() == null;
     }
 
     @Override
