@@ -1,7 +1,7 @@
-package com.bakh.springsecurity312.services;
+package com.bakh.springsecurity312.service;
 
-import com.bakh.springsecurity312.models.Role;
-import com.bakh.springsecurity312.repositories.RoleRepository;
+import com.bakh.springsecurity312.model.Role;
+import com.bakh.springsecurity312.repository.RoleRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
