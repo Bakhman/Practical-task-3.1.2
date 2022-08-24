@@ -1,6 +1,6 @@
-package com.bakh.springsecurity312.services;
+package com.bakh.springsecurity312.service;
 
-import com.bakh.springsecurity312.models.User;
+import com.bakh.springsecurity312.model.User;
 
 import java.util.List;
 
