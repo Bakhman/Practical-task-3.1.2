@@ -24,10 +24,7 @@ public class UserController {
 
     @GetMapping("/user")
     public String getUser(Model model) {
-        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        Long userId = user.getId();
-        user = userService.findUserById(userId);
-        model.addAttribute("user", user);
+        model.addAttribute("user", userService.findUser());
         return "get-user";
     }
 }
