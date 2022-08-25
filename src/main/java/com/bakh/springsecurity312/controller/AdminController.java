@@ -26,19 +26,19 @@ public class AdminController {
     }
 
     @GetMapping("/")
-    public String homePage() {
+    public String toHomePage() {
         return "homePage";
     }
 
     @GetMapping("/admin")
-    public String getUsers(Model model) {
+    public String toUsersPage(Model model) {
         List<User> users = userService.findAllUsers();
         model.addAttribute("users", users);
         return "admin/user-list";
     }
 
     @GetMapping("/createUser")
-    public String userForm(Model model) {
+    public String getUserCreationForm(Model model) {
         List<Role> roles = roleService.getAllRoles();
         model.addAttribute("user", new User());
         model.addAttribute("rolesList", roles);
@@ -46,13 +46,13 @@ public class AdminController {
     }
 
     @PostMapping("/createUser")
-    public String create(@ModelAttribute("user")  User user) {
+    public String createUser(@ModelAttribute("user")  User user) {
         userService.save(user);
         return "redirect:/admin";
     }
 
     @GetMapping("/update/{id}")
-    public String updateUserForm(@PathVariable Long id, Model model) {
+    public String getUserUpdateForm(@PathVariable Long id, Model model) {
         List<Role> roles = roleService.getAllRoles();
         model.addAttribute("user", userService.findUserById(id));
         model.addAttribute("rolesList", roles);
@@ -60,13 +60,13 @@ public class AdminController {
     }
 
     @PatchMapping("/update/{id}")
-    public String update(@PathVariable Long id, User user) {
+    public String updateUser(@PathVariable Long id, User user) {
         userService.editUser(user);
         return "redirect:/admin";
     }
 
     @GetMapping("/delete/{id}")
-    public String delete(@PathVariable Long id) {
+    public String deleteUser(@PathVariable Long id) {
         userService.deleteUserById(id);
         return "redirect:/admin";
     }
