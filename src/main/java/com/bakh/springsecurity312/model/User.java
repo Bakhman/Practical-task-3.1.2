@@ -17,15 +17,14 @@ import java.util.Set;
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
     private Long id;
-    @Column
+    
     private String username;
-    @Column
+    
     private String password;
-    @Column
+    
     private String name;
-    @Column
+    
     private String email;
 
     @ManyToMany(fetch = FetchType.LAZY)
