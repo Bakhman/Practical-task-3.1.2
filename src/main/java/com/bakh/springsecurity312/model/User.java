@@ -121,9 +121,12 @@ public class User implements UserDetails {
 
      @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof User user)) return false;
-
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof User user)) {
+            return false;
+        }
         return getId() != null ? getId().equals(user.getId()) : user.getId() == null;
     }
 
